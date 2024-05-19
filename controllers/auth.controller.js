@@ -1,6 +1,5 @@
 import User from "../models/user.model.js";
 import bcryptjs from "bcryptjs";
-import { errorHandler } from "../utils/error.js";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 dotenv.config();
@@ -23,22 +22,19 @@ export const signin = async (req, res, next) => {
     const validUser = await User.findOne({ email });
     if (!validUser) return next(errorHandler(404, "User not found"));
     const validPassword = bcryptjs.compareSync(password, validUser.password);
-    if (!validPassword) return next(errorHandler(401, "wrong credentials"));
+    if (!validPassword) return next(errorHandler(401, "Wrong credentials"));
 
-    // Token oluşturuluyor
     const token = jwt.sign({ id: validUser._id }, process.env.JWT_SECRET, {
       expiresIn: "1h",
     });
     const { password: hashedPassword, ...rest } = validUser._doc;
 
     const expiryDate = new Date(Date.now() + 3600000); // 1 hour
-    // Cookie'ye ekleniyor
     res.cookie("access_token", token, { httpOnly: true, expires: expiryDate });
 
-    // JSON yanıtında da token'ı döndür
     res.status(200).json({
       ...rest,
-      token, // Token burada JSON yanıtına ekleniyor
+      token,
     });
   } catch (error) {
     next(error);
@@ -96,31 +92,22 @@ export const signout = (req, res) => {
 export const signinId = async (req, res, next) => {
   const { email, password } = req.body;
   try {
-    // Kullanıcıyı email'e göre ara
     const validUser = await User.findOne({ email });
-    if (!validUser) {
-      return next(errorHandler(404, "User not found"));
-    }
+    if (!validUser) return next(errorHandler(404, "User not found"));
 
-    // Parolayı doğrula
     const validPassword = bcryptjs.compareSync(password, validUser.password);
-    if (!validPassword) {
-      return next(errorHandler(401, "Wrong credentials"));
-    }
+    if (!validPassword) return next(errorHandler(401, "Wrong credentials"));
 
-    // Kullanıcı için bir JWT token oluştur
     const token = jwt.sign({ id: validUser._id }, process.env.JWT_SECRET, {
       expiresIn: "1h",
     });
 
-    const expiryDate = new Date(Date.now() + 3600000); // 1 saat sonrası için geçerlilik tarihi
+    const expiryDate = new Date(Date.now() + 3600000); // 1 hour
 
-    // Cookie'ye token ekleyerek HTTP only olarak ayarla
     res.cookie("access_token", token, { httpOnly: true, expires: expiryDate });
 
-    // JSON yanıtında token'ı döndür
     res.status(200).json({
-      id: validUser._id, // Kullanıcının id'sini döndür
+      id: validUser._id,
     });
   } catch (error) {
     next(error);
