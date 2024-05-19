@@ -11,6 +11,22 @@ export const getAllMenus = async (req, res) => {
   }
 };
 
+// Belirli bir menüyü id'ye göre getir
+export const getMenuById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const menu = await Menu.findById(id);
+
+    if (!menu) {
+      return res.status(404).json({ message: 'Menu not found' });
+    }
+
+    res.json(menu);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 
 //Popüler menüler
  export const getPopularMenus = async (req, res) => {
