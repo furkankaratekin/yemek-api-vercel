@@ -7,32 +7,13 @@ dotenv.config();
 
 export const signup = async (req, res, next) => {
   const { username, email, password } = req.body;
-
-  // Hata ayıklama için gelen verileri kontrol edin
-  console.log("Request body:", req.body);
-
-  // username, email ve password alanlarının eksiksiz olup olmadığını kontrol edin
-  if (!username || !email || !password) {
-    return res
-      .status(400)
-      .json({ message: "Username, email, and password are required" });
-  }
-
+  const hashedPassword = bcryptjs.hashSync(password, 10);
+  const newUser = new User({ username, email, password: hashedPassword });
   try {
-    // Şifreyi hash'le
-    const hashedPassword = bcryptjs.hashSync(password, 10);
-
-    // Yeni kullanıcı oluştur
-    const newUser = new User({
-      username,
-      email,
-      password: hashedPassword,
-    });
-
     await newUser.save();
     res.status(201).json({ message: "User created successfully" });
   } catch (error) {
-    next(errorHandler(error)); // Hataları özel bir hata işleyiciye yönlendir
+    next(error);
   }
 };
 
