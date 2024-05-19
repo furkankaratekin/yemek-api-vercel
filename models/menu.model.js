@@ -7,6 +7,11 @@ const menuSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
+    picture: {
+      type: String,
+      required: true,
+      unique: true,
+    },
     recipe_ids: [
       {
         type: mongoose.Schema.Types.ObjectId,
@@ -17,15 +22,15 @@ const menuSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    popular:{
-      type: Boolean
+    popular: {
+      type: Boolean,
     },
 
     //Menülerde kimin oluşturduğunun bir önemi yok. Bu bilgi sadece gösterim
-/*     createdBy: {
+    /*     createdBy: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-    }, */  
+    }, */
   },
   { timestamps: true }
 );
