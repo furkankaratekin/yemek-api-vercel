@@ -8,7 +8,7 @@ import {
   addFavoriteRecipe,
   removeFavoriteRecipe,
   listFavorites,
-  getRecipesByUserId
+  getRecipesByUserId,
 } from "../controllers/recipe.controller.js";
 import { verifyToken } from "../utils/verifyUser.js";
 
@@ -21,7 +21,7 @@ router.get("/", getAllRecipes);
 router.get("/:id", getRecipeById);
 
 //Kullanıcı id'ye göre tarifleri listele
-router.get("/user-recipes/:id",getRecipesByUserId)
+router.get("/user-recipes/:id", getRecipesByUserId);
 
 // Yeni bir tarif ekle
 router.post("/add", verifyToken, addRecipe);
@@ -39,8 +39,6 @@ router.post("/favorites/:userId/add", verifyToken, addFavoriteRecipe);
 router.delete("/favorites/:userId/remove", verifyToken, removeFavoriteRecipe);
 
 //Favorileri Listeleme
-router.get("/favorites/:userId",listFavorites )
-
-
+router.get("/favorites/:userId", listFavorites);
 
 export default router;

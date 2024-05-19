@@ -14,19 +14,24 @@ export const getAllMenus = async (req, res) => {
 // Belirli bir menüyü id'ye göre getir
 export const getMenuById = async (req, res) => {
   try {
+    // URL'den id parametresini alın
     const { id } = req.params;
-    const menu = await Menu.findById(id);
 
+    // Doğrudan id değerini kullanarak menüyü bulun
+    const menu = await Menu.findOne({ _id: id });
+
+    // Menü bulunamazsa, 404 hatası döndür
     if (!menu) {
-      return res.status(404).json({ message: 'Menu not found' });
+      return res.status(404).json({ message: "Menu not found" });
     }
 
+    // Menü bulunursa, menüyü JSON formatında döndür
     res.json(menu);
   } catch (error) {
+    // Hata oluşursa, 500 hatası ile hata mesajını döndür
     res.status(500).json({ message: error.message });
   }
 };
-
 
 //Popüler menüler
  export const getPopularMenus = async (req, res) => {
