@@ -13,6 +13,9 @@ const recipeSchema = new mongoose.Schema(
     category: {
       type: String,
     },
+    youtube_link: {
+      type: String,
+    },
     ingredients: [
       {
         type: String, // Düzelme: ingredients bir dizi string olmalıdır, Array değil
