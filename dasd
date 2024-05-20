@@ -1,0 +1,95 @@
+[33mcommit 93120994507f1ca7e7070c36f2d87ebe109b2be4[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: furkankaratekin <furkankaratekin.2k1@gmail.com>
+Date:   Mon May 20 09:45:31 2024 +0300
+
+    auth updated
+
+[33mcommit 380da65e35a1336041593ce5123bb0bc4ee55376[m
+Author: furkankaratekin <furkankaratekin.2k1@gmail.com>
+Date:   Mon May 20 09:40:19 2024 +0300
+
+    remove .env in github
+
+[33mcommit c8f635342aec00c5012ab0fec635f791cd6355d0[m
+Author: furkankaratekin <furkankaratekin.2k1@gmail.com>
+Date:   Sun May 19 23:52:32 2024 +0300
+
+    auth update
+
+[33mcommit 3004c13d0a4de6900829b93bf1634bba4215bcec[m
+Author: furkankaratekin <furkankaratekin.2k1@gmail.com>
+Date:   Sun May 19 23:38:28 2024 +0300
+
+    auth updated
+
+[33mcommit 40361a62ffcd213f74feec4789257e567ffcd344[m
+Author: furkankaratekin <furkankaratekin.2k1@gmail.com>
+Date:   Sun May 19 18:03:14 2024 +0300
+
+    authController final updatte
+
+[33mcommit b8e74300d9e0ab7def943f9494f7c9c66f38f014[m
+Author: furkankaratekin <furkankaratekin.2k1@gmail.com>
+Date:   Sun May 19 17:59:52 2024 +0300
+
+    authrcontroller update
+
+[33mcommit b6316dca79714d7bab80f93e78bd18966afdeca4[m
+Author: furkankaratekin <furkankaratekin.2k1@gmail.com>
+Date:   Sun May 19 17:54:16 2024 +0300
+
+    usersignup update
+
+[33mcommit f87af3515399f14c2cdc9ffad274f65013b0813c[m
+Author: furkankaratekin <furkankaratekin.2k1@gmail.com>
+Date:   Sun May 19 17:31:47 2024 +0300
+
+    youtube_link tariflere eklendi
+
+[33mcommit a3e9e5d996643a7ea99fd9eccf101c7f31cd7393[m
+Author: furkankaratekin <furkankaratekin.2k1@gmail.com>
+Date:   Sun May 19 16:10:09 2024 +0300
+
+    controller menu düzenlendi
+
+[33mcommit c2b83a389d3388cb8da948da962181cf4613c219[m
+Author: furkankaratekin <furkankaratekin.2k1@gmail.com>
+Date:   Sun May 19 15:41:44 2024 +0300
+
+    menuId'ye göre getirme geldi
+
+[33mcommit ddcb16e0d7009f9a2f8ff32589d3827f7fc8f038[m
+Author: furkankaratekin <furkankaratekin.2k1@gmail.com>
+Date:   Sun May 19 15:15:54 2024 +0300
+
+    menu-model-update
+
+[33mcommit c384df933bf97c84dc192f1922032d0d5fe73df0[m
+Author: furkankaratekin <furkankaratekin.2k1@gmail.com>
+Date:   Sun May 19 14:51:59 2024 +0300
+
+    renderfinal
+
+[33mcommit 3a1496ec0e6b7875239302dbf9bfe80108e6432f[m
+Author: furkankaratekin <furkankaratekin.2k1@gmail.com>
+Date:   Sun May 19 14:45:40 2024 +0300
+
+    final3
+
+[33mcommit 17c9730435ea74b8f57a5c85868d01b76ad96a0b[m
+Author: furkankaratekin <furkankaratekin.2k1@gmail.com>
+Date:   Sun May 19 14:42:16 2024 +0300
+
+    final
+
+[33mcommit 8ab2a0c67b7b618f09b2de734a8e4770332d08a7[m
+Author: furkankaratekin <furkankaratekin.2k1@gmail.com>
+Date:   Sun May 19 14:33:49 2024 +0300
+
+    final
+
+[33mcommit cc63214169d9cb7b083c99daebf986ce988fbe0d[m
+Author: furkankaratekin <furkankaratekin.2k1@gmail.com>
+Date:   Sun May 19 14:30:23 2024 +0300
+
+    first
